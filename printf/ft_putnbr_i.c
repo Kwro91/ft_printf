@@ -6,11 +6,11 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 13:44:21 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/30 13:50:28 by besalort         ###   ########.fr       */
+/*   Updated: 2022/12/05 14:40:25 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr_i(int nb)
 {

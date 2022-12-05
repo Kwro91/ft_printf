@@ -6,16 +6,16 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:36:10 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/30 13:50:20 by besalort         ###   ########.fr       */
+/*   Updated: 2022/12/05 14:43:34 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "ft_printf.h"
 
 static int	whatisit(char c, va_list b)
 {
 	int	count;
-	
+
 	count = 0;
 	if (c == 'c')
 		count += ft_putchar_i((char)va_arg(b, int));
@@ -26,7 +26,7 @@ static int	whatisit(char c, va_list b)
 	else if (c == 'u')
 		count += ft_putnbr_u(va_arg(b, unsigned int));
 	else if (c == 'x')
-		count += ft_convertbase((unsigned int)va_arg(b, unsigned int), 0);
+		count += ft_convertbase(va_arg(b, unsigned int), 0);
 	else if (c == 'X')
 		count += ft_convertbase(va_arg(b, unsigned int), 1);
 	else if (c == '%')
@@ -45,11 +45,11 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	count = 0;
 	va_start(b, str);
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] == '%')
 		{
-			count += whatisit(str[i+1], b);
+			count += whatisit(str[i + 1], b);
 			i += 2;
 		}
 		else
@@ -62,12 +62,8 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-int	main(void)
+
+int main (void)
 {
-	char	*name = "Benjamin";
-	int		age = -2147483648;
-	void	*p = &age;
-	
-	printf("%i\n", printf("%p\n", p));
-	printf("%i\n", ft_printf("%p\n",p));
+	ft_printf("%s\n", "😈");
 }

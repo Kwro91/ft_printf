@@ -6,16 +6,15 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 13:45:35 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/30 13:50:15 by besalort         ###   ########.fr       */
+/*   Updated: 2022/12/05 14:39:14 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "ft_printf.h"
 
-int	ft_convertbase(unsigned long int nb, int up)
+int	ft_convertbase(unsigned int nb, int up)
 {
 	char	*base;
-	char	*str;
 	int		count;
 
 	count = 0;

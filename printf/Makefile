@@ -6,11 +6,11 @@
 #    By: besalort <besalort@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 13:28:55 by besalort          #+#    #+#              #
-#    Updated: 2022/11/30 13:58:05 by besalort         ###   ########.fr        #
+#    Updated: 2022/12/05 13:59:40 by besalort         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libprintf.a
+NAME = libftprintf.a
 
 SRCS =	ft_printf.c \
 	ft_adress.c \
@@ -26,12 +26,10 @@ CC = cc
 
 RM = rm -f
 
-CFLAGS = -g -Wall -Werror -Wextra
-
 AR = ar rcs
 
 .c.o:
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+	${CC} -Wall -Werror -Wextra -c -g $< -o ${<:.c=.o}
 
 $(NAME):	${OBJS}
 	${AR} $(NAME) ${OBJS}
